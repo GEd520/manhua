@@ -1,0 +1,46 @@
+[
+  {
+    "bookSourceComment": "//2025.1.17by.◎辞晨◎\n//正文解密",
+    "bookSourceGroup": "写源",
+    "bookSourceName": "🌊奇漫屋◎辞晨◎",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://m.qimanwu.org/",
+    "customOrder": -99865,
+    "enabled": false,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nsort=[];\npush=(title,url,type1,type2)=>sort.push({\n\t\ttitle: title,\n\t\turl: url,\n\t\tstyle: {\n\t\t\t\tlayout_flexGrow: type1,\n\t\t\t\tlayout_flexBasisPercent: type2\n\t\t\t}\n\t});\npush(\"全部🌊分类\",null,1,1)\n\tarList=[[\"排行榜\",\"/custom/top\"],[\"已完结\",\"/custom/end\"],[\"连载\",\"/custom/serialize\"],[\"日榜\",\"/custom/day\"],[\"周榜\",\"/custom/week\"],[\"月榜\",\"/custom/month\"],[\"国产漫画\",\"/category/list/1\"],[\"日本漫画\",\"/category/list/2\"],[\"韩国漫画\",\"/category/list/3\"],[\"欧美漫画\",\"/category/list/4\"]]\n\tarList.map(([tag,uri])=>{\n\t\turl=`${uri}<,/page/{{page}}>`;\n\t\tpush(tag, url, 1, 0.25);\n\t\t});\n//java.log(JSON.stringify(sort))\nJSON.stringify(sort)",
+    "header": "{\n  'User-Agent': \"Mozilla/5.0 (Linux; Android 15; V2304A Build/AP3A.240905.015.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/126.0.6478.71 Mobile Safari/537.36\",\n  'sec-ch-ua-platform': \"\\\"Android\\\"\",\n  'origin': \"baseUrl\",\n  'x-requested-with': \"cn.mujiankeji.mbrowser\",\n  'referer': \"baseUrl\",\n  'accept-language': \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"\n}",
+    "lastUpdateTime": 1741791534990,
+    "loginUrl": "",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "p.1@text",
+      "coverUrl": ".content@img.0@src",
+      "intro": ".detailContent@text",
+      "kind": ".subtitle@a@text",
+      "lastChapter": "p.3@text##更新至：",
+      "name": ".title@text"
+    },
+    "ruleContent": {
+      "content": "@js:\nparams = result.match(/params = '([^']+)'/)[1];\nfunction decryptParams(encryptedData) {\n  var iv = encryptedData.slice(0, 16);\n  var key = \"9S8$vJnU2ANeSRoF\";\n  var decryptedData = java.createSymmetricCrypto(\"AES/CBC/PKCS7Padding\", key, iv).decryptStr(encryptedData)\nreturn decryptedData\n  \n}\nimg = String(decryptParams(params)).match(/\\{[\\s\\S]+\\}/)[0]\n\nimg = JSON.parse(img).images;\nimg.map(x=>'<img src=\"'+x+'\">').join(\"\\n\")",
+      "imageStyle": "FULL"
+    },
+    "ruleExplore": {},
+    "ruleSearch": {
+      "author": ".bottom@textNodes",
+      "bookList": "<js>\nif (result.match(/搜索繁忙/)) {\n  java.log('搜索繁忙，等一下哈');\n} else {\n  java.getElements(\".rankList@li\");\n}\n</js>",
+      "bookUrl": "a.0@href",
+      "coverUrl": "img.0@src",
+      "lastChapter": ".subtitle@text",
+      "name": ".title@text"
+    },
+    "ruleToc": {
+      "chapterList": ".chapterList@li",
+      "chapterName": "a@text",
+      "chapterUrl": "a@href"
+    },
+    "searchUrl": "/search/{{key}}<,/{{page+1}}>",
+    "weight": 0
+  }
+]
