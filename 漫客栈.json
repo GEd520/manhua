@@ -1,0 +1,55 @@
+[
+  {
+    "bookSourceComment": "//2025.1.5by.◎辞晨◎",
+    "bookSourceGroup": "写源",
+    "bookSourceName": "漫客栈◎辞晨◎",
+    "bookSourceType": 2,
+    "bookSourceUrl": "https://m.mkzhan.com/",
+    "customOrder": 267,
+    "enabled": false,
+    "enabledCookieJar": true,
+    "enabledExplore": true,
+    "exploreUrl": "@js:\nsort=[];\npush=(title,url,type1,type2)=>sort.push({\n\t\ttitle: title,\n\t\turl: url,\n\t\tstyle: {\n\t\t\t\tlayout_flexGrow: type1,\n\t\t\t\tlayout_flexBasisPercent: type2\n\t\t\t}\n\t});\npush(\"全部🌊分类\",null,1,1)\n\tarList=[\"霸总\",\"修真\",\"恋爱\",\"校园\",\"冒险\",\"搞笑\",\"生活\",\"热血\",\"架空\",\"后宫\",\"玄幻\",\"悬疑\",\"恐怖\",\"灵异\",\"动作\",\"科幻\",\"战争\",\"古风\",\"穿越\",\"竞技\",\"励志\",\"同人\",\"真人\"\n]\n\tarList.map((tag,index)=>{\n\t\turl=`http://comic.mkzcdn.com/search/filter/?page_num={{page}}&page_size=12&theme_id=${index+1}`;\n\t\tpush(tag, url, 1, 0.25);\n\t\t});\n\t\tpush(\"🌊状态🌊\",null,1,1);\n\t\tpush(\"连载\",`http://comic.mkzcdn.com/search/filter/?finish=1&page_num={{page}}&page_size=12`,1,0.35);\n\t\tpush(\"完结\",`http://comic.mkzcdn.com/search/filter/?finish=2&page_num={{page}}&page_size=12`,1,0.35);\n\t\tpush(\"🌊类型🌊\",null,1,1)\n\t\tnrList=[\"少年\",\"少女\",\"青年\",\"少儿\"\n]\nnrList.map((tag,index)=>{\turl=`http://comic.mkzcdn.com/search/filter/?audience=${index+1}&page_num={{page}}&page_size=12`;\n\tpush(tag,url,1,0.25)\n\t});\n\tpush(\"🌊题材🌊\",null,1,1)\n\t\torList=[[\"免费\",\"is_free\"],[\"付费\",\"is_fee\"],[\"VIP\",\"is_vip\"]]\norList.map([tag,ure]=>{\turl=`http://comic.mkzcdn.com/search/filter/?${ure}=1&page_num={{page}}&page_size=12`;\n\tpush(tag,url,1,0.25)\n\t});\n//java.log(JSON.stringify(sort))\nJSON.stringify(sort)",
+    "header": "{\n  'User-Agent': \"Mozilla/5.0 (Linux; Android 15; V2304A Build/AP3A.240905.015.A2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/126.0.6478.71 Mobile Safari/537.36\",\n  'sec-ch-ua-platform': \"\\\"Android\\\"\",\n  'origin': \"https://m.mkzhan.com\",\n  'x-requested-with': \"cn.mujiankeji.mbrowser\",\n  'referer': \"https://m.mkzhan.com/\",\n  'accept-language': \"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7\"\n}",
+    "lastUpdateTime": 1737084151606,
+    "loginUrl": "https://m.mkzhan.com/login/",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "{{book.author}}",
+      "coverUrl": "$.cover",
+      "init": "$.data",
+      "intro": "$.content",
+      "kind": "\n<js>\nfunction x(a, b) {\n\tresult = String(result).replace(a, b);\n}\nresult = java.getString('$.theme_id');\nx(/11/,'未知');\nx(/12/,'玄幻');\nx(/13/,'悬疑');\nx(/14/,'未知');\nx(/20/,'穿越');\nx(/19/,'古风');\nx(/18/,'未知');\nx(/23/,'未知');\nx(/15/,'灵异');\nx(/16/,'动作');\nx(/17/,'未知');\nx(/19/,'未知');\nx(/10/,'后宫');\nx(/1/,'霸总');\nx(/2/,'修真');\nx(/3/,'恋爱');\nx(/5/,'冒险');\nx(/4/,'校园');\nx(/9/,'架空');\nx(/8/,'热血');\nx(/6/,'搞笑');\nx(/7/,'生活');\nresult\n</js>",
+      "lastChapter": "$.chapter_title",
+      "name": "$.title",
+      "tocUrl": "https://comic.mkzcdn.com/chapter/v1/?comic_id={{$.comic_id}}",
+      "wordCount": "@put:{p:$.comic_id}"
+    },
+    "ruleContent": {
+      "content": "$.data..image\n<js>\n//java.log(result);\nlet newResult = result.split(\"\\n\").map(x => x);\nlet headers = JSON.stringify({\"headers\":{\"Referer\":baseUrl}});\nnewResult.map(x => `<img src=\"${x},${headers}\">`).join(\"\\n\");\n</js>",
+      "imageStyle": "FULL"
+    },
+    "ruleExplore": {
+      "bookList": ""
+    },
+    "ruleSearch": {
+      "author": "$.author_title",
+      "bookList": "$..list[*]",
+      "bookUrl": "https://comic.mkzcdn.com/comic/info/?comic_id={{$.comic_id}}",
+      "coverUrl": "$.cover",
+      "intro": "",
+      "kind": "<js>\nfunction x(a, b) {\n\tresult = String(result).replace(a, b);\n}\nresult = java.getString('$.theme_id');\nx(/11/,'未知');\nx(/12/,'玄幻');\nx(/13/,'悬疑');\nx(/14/,'未知');\nx(/20/,'穿越');\nx(/19/,'古风');\nx(/18/,'未知');\nx(/23/,'未知');\nx(/15/,'灵异');\nx(/16/,'动作');\nx(/17/,'未知');\nx(/19/,'未知');\nx(/10/,'后宫');\nx(/1/,'霸总');\nx(/2/,'修真');\nx(/3/,'恋爱');\nx(/5/,'冒险');\nx(/4/,'校园');\nx(/9/,'架空');\nx(/8/,'热血');\nx(/6/,'搞笑');\nx(/7/,'生活');\nresult\n</js>",
+      "lastChapter": "$.chapter_title",
+      "name": "$.title"
+    },
+    "ruleToc": {
+      "chapterList": "$.data[*]",
+      "chapterName": "$.title",
+      "chapterUrl": "https://comic.mkzcdn.com/chapter/content/v1/?chapter_id={{$.chapter_id}}&comic_id=@get:{p}&format=1&quality=1&sign=0&type=1&uid=0",
+      "isVip": "$.is_vip",
+      "updateTime": ""
+    },
+    "searchUrl": "https://comic.mkzcdn.com/search/keyword/?keyword={{key}}&page_num={{page}}&page_size=20",
+    "weight": 0
+  }
+]
